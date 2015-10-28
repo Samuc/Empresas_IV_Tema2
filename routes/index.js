@@ -1,4 +1,6 @@
 var _ = require('underscore');
+var assert = require("assert");
+
 
 // TODO: This shoul be read from a database
 var heroes = [
@@ -55,6 +57,11 @@ exports.hero = function(req, res) {
     return p.name == req.params.name;
   }).facts;
   res.json(facts);
+
+  assert(facts ,"Empresas");
+
+
+  console.log('Test assert -> empresa leída');
 }
 
 exports.addFact = function(req, res) {
@@ -64,7 +71,11 @@ exports.addFact = function(req, res) {
 
   hero.facts.push(req.body.fact);
 
-  console.log('New fact for ' + hero.name + ': ' + req.body.fact);
+  assert(hero.name ,"Nombre de la empresa introducida");
+  assert(req.body.fact ,"Opinión introducida");
+
+
+  console.log('Test assert-> Opinión añadida correctamente a ' + hero.name + '\n Calificación añadida: ' + req.body.fact);
 
   res.json({status: 'ok' });
 }

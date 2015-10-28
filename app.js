@@ -10,6 +10,8 @@ var express = require('express')
 
 var app = express();
 
+var assert = require("assert");
+
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
@@ -29,6 +31,14 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/hero/:name', routes.hero);
 app.post('/hero/add-fact', routes.addFact);
+
+app.post('/hero/add-fact', function (req, res) {
+    var text = req.body.name;
+
+    assert(text, "Texto opinión");
+    console.log("Opinión hecha correctamente");
+});
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
