@@ -1,6 +1,6 @@
 {
-  "name": "calificaionesEmpresasname",
-  "version": "0.0.1",
+  "name": "calificaciones_empresas_web",
+  "version": "0.0.5",
   "private": true,
   "scripts": {
     "start": "node app"
@@ -13,5 +13,21 @@
     "docco": "^0.7.0",
     "grunt": "^0.4.5",
     "grunt-docco": "^0.4.0"
-  }
+  },
+  "description": "This is just a sample app to play with:",
+  "main": "GruntFile.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samuc/Empresas_IV_Tema2.git"
+  },
+  "author": "Samuel Carmona (Samuc)",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Samuc/Empresas_IV_Tema2/issues"
+  },
+  "homepage": "https://github.com/Samuc/Empresas_IV_Tema2#readme"
 }
